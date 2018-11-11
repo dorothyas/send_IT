@@ -1,0 +1,146 @@
+
+a {
+    text-decoration: none;
+}
+
+nav{
+    background: rgb(243, 183, 183);
+    padding: 10px;
+    box-sizing: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+.logo a {
+    font-family: cursive;
+    font-size: 20px; 
+}
+.nav-right{
+    float: right;       
+}
+.nav-right a{
+    padding-right: 20px;
+}
+.nav-right a:hover {
+    color: rgb(16, 31, 241);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(233, 222, 222) 
+  }
+.body{
+    text-align: center;
+    font-size: 15px;
+    min-height: 40vh;
+}
+button{
+    font-size: 40px;
+    width: 15%;
+    font-size: 20px;   
+}
+
+#login-button  {
+    background: rgb(2, 114, 2);
+    padding: 10px 20px;
+    color: rgb(252, 253, 250);
+    
+}
+#admin-login{
+    background: rgb(60, 60, 207);
+    padding: 10px 20px;  
+}
+#admin-login a{
+    color: rgb(252, 253, 250);
+}
+#signup{
+    background: rgb(60, 60, 207);
+    padding: 10px 20px;
+    color: rgb(252, 253, 250);
+}
+
+.signup-form .field{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+input {
+    border: none;
+    padding: 10px;
+    width: 30%;
+    margin: 5px;
+}
+.create-button{
+    background: rgb(2, 114, 2);;
+    padding: 5px 5px;
+    color: rgb(252, 253, 250);
+}
+.cancel-button{
+    background: rgb(211, 4, 4);
+    padding: 5px 5px;
+}
+.cancel-button a{
+    color: rgb(252, 253, 250);
+}
+.order{
+    width: 80%;
+    margin: auto; 
+    font-size: 15px;  
+}
+.order-content .title{
+font-weight: bold;    
+}
+.order-content {
+    border-bottom: 1px dotted black;
+    margin: 10px;
+}
+.order-content .order-detail{
+    margin: 20px;
+}
+.order-detail .status .progress {
+    background: red;
+    color: #fff;
+    padding: 1px;
+}
+.order-content .status .done {
+    background: rgb(55, 94, 221);
+    color: #fff;
+}
+.order-content .status button{
+    margin: 5px 5px 5px 5px;
+}
+.tables{
+    font-size: 15px;
+    min-height: 40vh;
+}
+.admin-table {
+    border-collapse: collapse;
+    width: 80%;
+    border: 1px solid rgb(8, 8, 8);
+    margin-left: 10px;
+
+}
+.small-table{
+    border-collapse: collapse;
+    width: 30%;
+    margin-left: 10px;
+    border: 2px solid black;
+}
+th {
+    background-color: rgb(168, 173, 168);
+}
+td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+
+tr{
+    background-color: #dddddd;
+}
+h4{
+    margin-left: 20px; 
+}
+.acc-details{
+    margin-left: 20px; 
+}
