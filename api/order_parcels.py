@@ -10,7 +10,7 @@ class Order:
     def get_orders(self):
         return {'All parcels': self.orders}
             
-    def create_parcel_orders(self, user_name, user_email,parcel_type, pick_up, destination, weight, status,parcel_Id):
+    def create_parcel_orders(self, user_name, user_email,parcel_type, pick_up, destination, weight, status,parcel_Id, user_id):
  
         parcels = [order for order in self.orders]
         parcel_Id = len(parcels) + 1
@@ -23,7 +23,8 @@ class Order:
             'destination': destination,
             'weight': weight,
             'status': status,
-            'parcel_Id': parcel_Id
+            'parcel_Id': parcel_Id,
+            'user_id': user_id
         }
         self.orders.append(order)
         return self.orders
@@ -44,3 +45,21 @@ class Order:
                 status = req.get('status')
                 order['status']= status
                 return {parcel_id: 'Parcel cancelled'}
+
+
+    def get_specific_order_by_user(self,user_id):
+        """
+            method for getting orders for a specific user
+        """
+        self.users = []
+
+        for order in self.orders:
+            if user_id == order['user_id']:
+                for order in self.orders:
+                    if user_id == order['user_id']:
+                        self.users.append(order)
+                response= {
+                    'User_orders': self.users
+                }
+                return (response)
+            return ("No orders forthis user")
