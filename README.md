@@ -3,6 +3,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/12bd3858a3bc8cdf3343/maintainability)](https://codeclimate.com/github/dorothyas/send_IT/maintainability)
 
 SendIT is a courier service that helps users deliver parcels to different destinations. SendIT provides courier quotes based on weight categories.
+## Project links:
+•	Github Pages: https://dorothyas.github.io/send_IT/UI
 
 ## Project Functionality
 ### User Interface
