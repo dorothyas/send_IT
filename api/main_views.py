@@ -17,7 +17,7 @@ class OrderMenu(MethodView):
         keys = ("user_name","parcel_type", "pick_up","destination","weight","user_email", "user_id")
         data = request.get_json()
         if not set(keys).issubset(set(request.json)):
-            return jsonify({"message":'missing in data'}), 400
+            return jsonify({"Message":'Missing data'}), 400
 
         if data['user_name'] == "":
             return jsonify({'Message':'Enter Username'}), 400
@@ -29,10 +29,19 @@ class OrderMenu(MethodView):
             return jsonify({'Message':'Enter Parcel Type'}), 400
 
         if ' ' in data['parcel_type']:
-            return jsonify({'parcel':'Parcel type should not contain any spaces'}), 400
+            return jsonify({'Message':'Parcel type should not contain any spaces'}), 400
+        
+        if data['pick_up'] == "":
+            return jsonify({'Message':'Enter Pick up information'}), 400
+
+        if data['destination'] == "":
+            return jsonify({'Message':'Enter Destination information'}), 400
 
         if not isinstance(data['weight'], int):
-            return jsonify({'weight':'Weight should be an integer'}), 400
+            return jsonify({'Message':'Weight should be an integer'}), 400
+
+        if not isinstance(data['user_id'], int):
+            return jsonify({'Message':'User id should be an integer'}), 400
 
         pattern = r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$"
         if not re.match(pattern, data['user_email']):
