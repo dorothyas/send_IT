@@ -65,7 +65,7 @@ class OrderMenu(MethodView):
         if user_id is None:    
             if parcel_Id is None:
                 if order.get_orders() == []:
-                    return jsonify ({"order":"No orders"}),404
+                    return jsonify ({"Message":"No orders yet"}),404
                 return jsonify(order.get_orders()),200
             return jsonify (order.get_one_order(parcel_Id)), 200
         return jsonify(order.get_specific_order_by_user(user_id))

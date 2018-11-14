@@ -8,7 +8,7 @@ class Order:
         self.orders= []
 
     def get_orders(self):
-        return {'All parcels': self.orders}
+        return self.orders
             
     def create_parcel_orders(self, user_name, user_email,parcel_type, pick_up, destination, weight, status,parcel_Id, user_id):
   
