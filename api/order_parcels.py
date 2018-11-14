@@ -11,7 +11,7 @@ class Order:
         return {'All parcels': self.orders}
             
     def create_parcel_orders(self, user_name, user_email,parcel_type, pick_up, destination, weight, status,parcel_Id, user_id):
- 
+  
         parcels = [order for order in self.orders]
         parcel_Id = len(parcels) + 1
 
@@ -26,6 +26,7 @@ class Order:
             'parcel_Id': parcel_Id,
             'user_id': user_id
         }
+
         self.orders.append(order)
         return self.orders
 

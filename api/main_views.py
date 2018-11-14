@@ -12,42 +12,42 @@ class OrderMenu(MethodView):
 
 
     def post(self):
-
-        # keys = ("user_name","parcel_type", "pick_up","destination","weight","user_email")
        
-        # if not set(keys).issubset(set(request.get_json())):
-        #     return jsonify({'Message': 'fill in all the required fields'}), 400
 
-        # if request.get_json('user_name') == "":
-        #     return jsonify({'Message':'Enter Username'}), 400
-
-        # if ' ' in request.get_json('user_name'):
-        #     return jsonify({'Message':'User name should not contain any spaces'}), 400
-
-        # if request.get_json('parcel_type') == "":
-        #     return jsonify({'Message':'Enter Parcel Type'}), 400
-
-        # if (' ' in request.get_json('parcel_type')) == True:
-        #     return jsonify({'parcel':'Parcel type should not contain any spaces'}), 400
-
-        # # if not isinstance(request.get_json('weight'), int):
-        # #     return jsonify({'weight':'Weight should be an integer'}), 400
-
-        # pattern = r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$"
-        # if not re.match(pattern, request.get_json['user_email']):
-        #     return jsonify({'message':'Enter valid Email'}), 400
-
+        keys = ("user_name","parcel_type", "pick_up","destination","weight","user_email", "user_id")
         data = request.get_json()
-        user_name = data.get('user_name')
-        user_email = data.get('user_email')
-        parcel_type = data.get('parcel_type')
-        pick_up = data.get('pick_up')
-        destination = data.get('destination')
-        weight = data.get('weight')
+        if not set(keys).issubset(set(request.json)):
+            return jsonify({"message":'missing in data'}), 400
+
+        if data['user_name'] == "":
+            return jsonify({'Message':'Enter Username'}), 400
+
+        if ' ' in data['user_name']:
+            return jsonify({'Message':'User name should not contain any spaces'}), 400
+
+        if data['parcel_type'] == "":
+            return jsonify({'Message':'Enter Parcel Type'}), 400
+
+        if ' ' in data['parcel_type']:
+            return jsonify({'parcel':'Parcel type should not contain any spaces'}), 400
+
+        if not isinstance(data['weight'], int):
+            return jsonify({'weight':'Weight should be an integer'}), 400
+
+        pattern = r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$"
+        if not re.match(pattern, data['user_email']):
+            return jsonify({'message':'Enter valid Email'}), 400
+
+        user_name = data['user_name']
+        user_email = data['user_email']
+        parcel_type = data['parcel_type']
+        pick_up = data['pick_up']
+        destination = data['destination']
+        weight = data['weight']
         status ='pending'
         parcel_id = 'parcel_id'
-        user_id = data.get('user_id') 
-        
+        user_id = data['user_id'] 
+
         order.create_parcel_orders(user_name, user_email, parcel_type, pick_up, destination, weight, status, parcel_id, user_id)
         response_object = order.__dict__
         return jsonify(response_object) , 201
