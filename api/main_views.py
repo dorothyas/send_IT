@@ -69,9 +69,11 @@ class OrderMenu(MethodView):
                 return jsonify(order.get_orders()),200
             return jsonify (order.get_one_order(parcel_Id)), 200
         return jsonify(order.get_specific_order_by_user(user_id))
+        
 
     def put(self, parcel_Id):
-        return jsonify({'parcel_id': order.put(parcel_Id)})
+        res = order.put(parcel_Id)
+        return jsonify({'parcel_id': res}),200
 
 
 

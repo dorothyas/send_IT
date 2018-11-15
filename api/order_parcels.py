@@ -42,10 +42,11 @@ class Order:
       
         for order in self.orders:
             if parcel_id == order['parcel_Id']:
-                req = request.get_json()
-                status = req.get('status')
-                order['status']= status
-                return {parcel_id: 'Parcel cancelled'}
+                data = request.get_json()
+                status = data['status']
+                order['status'] = status
+                return {'Message': 'Parcel cancelled'}
+            return {'Message':'Parcel id not found'}
 
 
     def get_specific_order_by_user(self,user_id):
@@ -63,4 +64,4 @@ class Order:
                     'User_orders': self.users
                 }
                 return (response)
-            return ("No orders forthis user")
+            return ("This user has no orders yet")
