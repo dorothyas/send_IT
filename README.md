@@ -21,25 +21,42 @@ SendIT is a courier service that helps users deliver parcels to different destin
 - Cancel the specific parcel delivery order
 - Create a parcel delivery order
 
+• The UI folder houses the user interface. To access the user interface, open the index.html.
+• The api folder contains the system backend services.
+
+## Built with
+- HTML
+- Python 3
+- CSS
+
 ## Prerequisites
 - GIT
+• to update and clone the repository
+``` 
+$ git clone
+```
+
 - IDE e.g Visual Studio Code
 - Postman
 
-## installed packages
-- python 3.7
+### Activate virtual enviroment
+``` 
+$  venv venv
+ source /env/bin/activate
+
+```
+### Install dependencies
 ``` 
 $ pip install -r requirements.txt
 
 ```
-## Running Tests
+### Running Tests
 • To run tests, use the command below;
 ``` 
 $ pytest
 
 ```
-
-## run server
+### Run server
 ``` 
 $ python run.py
 ```
@@ -56,6 +73,7 @@ $ python run.py
 
 ## Project links:
 •	Github Pages: https://dorothyas.github.io/send_IT/UI
+
 • Heroku : https://stargal-dorothy.herokuapp.com/api/v1/parcels
 ## Author
 - Dorothy Asiimwe
