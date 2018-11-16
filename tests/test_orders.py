@@ -66,13 +66,6 @@ class TestViews(unittest.TestCase):
         self.assertEqual(res2.status_code, 400)                              
 
        
-    def test_can_get_one_order(self):
-        """Method for testing the get function which returns one parcel"""
-
-        res = self.client().get('api/v1/parcels/2') 
-        res1 = self.client().get('api/v1/parcels/z')                          
-        self.assertEqual(res.status_code, 200)
-        self.assertEqual(res1.status_code, 404)
 
 
     def test_cancel_parcel_order(self):

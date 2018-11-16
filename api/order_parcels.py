@@ -69,6 +69,6 @@ class Order:
 
     def order_exists(self, parcel_type):
         for order in self.orders:
-            if parcel_type == order['parcel_type']:
+            if parcel_type == order[parcel_type]:
                 return True
             return False    
