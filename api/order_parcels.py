@@ -33,12 +33,11 @@ class Order:
 
     def get_one_order(self, parcel_Id):
         """method for getting an order"""
-
-        parcel_id_now = [order for order in self.orders 
-                               if order ['parcel_Id'] == parcel_Id]
-        if not parcel_id_now:
-            return {parcel_Id:"Parcel_id doesnot exist"}
-        return {'Requested order': parcel_id_now} 
+        for order in self.orders:
+            if order[parcel_Id] == parcel_Id:
+                return order
+            return {'Message': 'Parcel_id doesnot exist'}    
+ 
     
     def put(self, parcel_id):
         """method for cancelling an order"""
@@ -67,3 +66,9 @@ class Order:
                 }
                 return (response)
             return ("This user has no orders yet")
+
+    def order_exists(self, parcel_type):
+        for order in self.orders:
+            if parcel_type == order['parcel_type']:
+                return True
+            return False    

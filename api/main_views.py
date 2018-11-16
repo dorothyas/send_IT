@@ -46,6 +46,9 @@ class OrderMenu(MethodView):
         pattern = r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$"
         if not re.match(pattern, data['user_email']):
             return jsonify({'message':'Enter valid Email'}), 400
+        
+        if order.order_exists(request.json['parcel_type']):
+            return jsonify({'Message': 'parcel_type already exists'}), 400
 
         user_name = data['user_name']
         user_email = data['user_email']
