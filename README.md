@@ -3,8 +3,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/12bd3858a3bc8cdf3343/maintainability)](https://codeclimate.com/github/dorothyas/send_IT/maintainability)
 
 SendIT is a courier service that helps users deliver parcels to different destinations. SendIT provides courier quotes based on weight categories.
-## Project links:
-•	Github Pages: https://dorothyas.github.io/send_IT/UI
 
 ## Project Functionality
 ### User Interface
@@ -27,13 +25,20 @@ SendIT is a courier service that helps users deliver parcels to different destin
 - GIT
 - IDE e.g Visual Studio Code
 - Postman
-- HTML5
 
 ## installed packages
 - python 3.7
 ``` 
 $ pip install -r requirements.txt
+
 ```
+## Running Tests
+• To run tests, use the command below;
+``` 
+$ pytest
+
+```
+
 ## run server
 ``` 
 $ python run.py
@@ -49,5 +54,8 @@ $ python run.py
 |PUT /parcels/<parcelId>/cancel|Cancel the specific parcel delivery order|
 |POST /parcels| Create a parcel delivery order| 
 
+## Project links:
+•	Github Pages: https://dorothyas.github.io/send_IT/UI
+• Heroku : https://stargal-dorothy.herokuapp.com/api/v1/parcels
 ## Author
 - Dorothy Asiimwe
