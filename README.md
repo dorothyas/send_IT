@@ -22,6 +22,7 @@ SendIT is a courier service that helps users deliver parcels to different destin
 - Create a parcel delivery order
 
 • The UI folder houses the user interface. To access the user interface, open the index.html.
+
 • The api folder contains the system backend services.
 
 ## Built with
