@@ -8,10 +8,11 @@ class Order:
         self.orders= []
 
     def get_orders(self):
+        """method for getting all orders"""
         return self.orders
             
     def create_parcel_orders(self, user_name, user_email,parcel_type, pick_up, destination, weight, status,parcel_Id, user_id):
-  
+        """method for creating a parcel order"""
         parcels = [order for order in self.orders]
         parcel_Id = len(parcels) + 1
 
@@ -31,6 +32,8 @@ class Order:
         return self.orders
 
     def get_one_order(self, parcel_Id):
+        """method for getting an order"""
+
         parcel_id_now = [order for order in self.orders 
                                if order ['parcel_Id'] == parcel_Id]
         if not parcel_id_now:
@@ -38,7 +41,7 @@ class Order:
         return {'Requested order': parcel_id_now} 
     
     def put(self, parcel_id):
-
+        """method for cancelling an order"""
       
         for order in self.orders:
             if parcel_id == order['parcel_Id']:
@@ -50,9 +53,8 @@ class Order:
 
 
     def get_specific_order_by_user(self,user_id):
-        """
-            method for getting orders for a specific user
-        """
+        """method for getting orders for a specific user"""
+        
         self.users = []
 
         for order in self.orders:
