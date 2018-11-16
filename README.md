@@ -31,6 +31,7 @@ SendIT is a courier service that helps users deliver parcels to different destin
 
 ## Prerequisites
 - GIT
+
 • to update and clone the repository
 ``` 
 $ git clone
