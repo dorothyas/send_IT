@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order Parcel Delivery</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <nav class="header">
+        <div class="logo">
+            <a href="index.html">Send_IT</a>
+        </div>
+        <div class = nav-right>
+            <a href="order_details.html">Order Details</a>            
+            <a href="user_profile.html">My Profile</a>
+            <a href="index.html">Log out</a>
+        </div>
+    </nav>
+    <div class="body">
+        <div>
+            <h2>Welcome to Send_IT</h2>
+            <p>Send_IT is a courier service that helps users deliver parcels to different destinations.
+                <br> SendIT provides courier quotes based on weight categories</p>
+            <h3>Place your Parcel Delivery Order here!</h3>
+        </div>
+        <div class ="order-form">        
+            <form method="POST" class="orders">
+                <div class="orders">
+                    <div class="title">
+                        <label for="Parcel-1">Parcel-1</label><br>
+                        <label for="price">Price = 25,000 UGX</label>
+                    </div>
+                    <div class="field">            
+                        <input type="text" name="pickup location" placeholder=" Pickup location" required><br>
+                        <input type="text" name="Destination" placeholder="Destination" required>
+                    </div>
+                </div>
+                <div class="order-button">
+                    <button type="submit" class="create-button"><a href="order_details.html"> Create order</a></button>
+                    <button type="submit" class="cancel-button"><a href="order_delivery.html"> Cancel order</a></button>
+                </div>
+            </form>
+            <form method="POST" class="orders">
+                <div class="orders">
+                    <div class="title">
+                        <label for="Parcel-2">Parcel-2</label><br>
+                        <label for="price">Price = 55,000 UGX</label>
+                    </div>
+                    <div class="field">            
+                        <input type="text" name="pickup location" placeholder="Pickup location" required><br>
+                        <input type="text" name="Destination" placeholder="Destination" required>
+                    </div>
+                </div>
+                <div class="order-button">
+                    <button type="submit" class="create-button">Create Order</button>
+                    <button type="submit" class="cancel-button"><a href="order_delivery.html">Cancel order</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
