@@ -63,11 +63,8 @@ class TestViews(unittest.TestCase):
                                 parcel_type='parcel_2',weight=2, pick_up='ntinda', destination='bukoto',\
                                 user_id=3))) 
         self.assertEqual(res.status_code, 400)  
-        self.assertEqual(res2.status_code, 400)                              
-
-       
-
-
+        self.assertEqual(res2.status_code, 400) 
+        
     def test_cancel_parcel_order(self):
         """ Method for testing the put function when status is not cancelled asserts status code 400 """
         
